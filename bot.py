@@ -30,11 +30,11 @@ async def on_message(message):
         for censored_word in CENSORED_WORDS:
             if content.lower() == censored_word:
                 await message.delete()
-                await message.channel.send(f"{message.author.mention} пошел нахуй")
+                await message.channel.send(f"{message.author.mention} block")
 
 @bot.command()
 @commands.has_permissions(kick_members=True, administrator=True)
-async def kick(ctx, member: disnake.Member, *, reason = "Нарушение правил"):
+async def kick(ctx, member: disnake.Member, *, reason = "))))"):
         
         await ctx.send(f"Администратор {ctx.author.mention} исключил пользователя {member.mention}", delete_after = 100000)
         await member.kick(reason=reason)
@@ -52,5 +52,6 @@ async def ban(ctx, member: disnake.Member, *, reason = "Нарушение пр�
 
 
 bot.run("MTIzMjExMjE1NTIxMDI4NTEzOA.Gle1qj.Hd9fZqgiyGGD7UxVpJyrdQFP862yXi5X6yW7yY")
+
 
 
